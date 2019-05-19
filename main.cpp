@@ -104,18 +104,18 @@ int main(int argc, char const *argv[])
 			{
 				if (arr[i].GetPuntosDeVida() != 0)
 				{
-					uniform_int_distribution<uint32_t> moveY(-1,1);
-					uniform_int_distribution<uint32_t> moveX(-1,1);
-					int y = moveY(generator);
-					int x = moveX(generator);
+					uniform_int_distribution<uint32_t> moveY(1,3);
+					uniform_int_distribution<uint32_t> moveX(1,3);
+					int y = moveY(generator) - 2;
+					int x = moveX(generator) - 2;
 
 					int a = arr[i].GetposicionY();
 					int b = arr[i].GetposicionX();
 
 					while (mapa->matriz[a+y][b+x] != ' ')
 					{
-						y = moveY(generator);
-						x = moveX(generator);
+						y = moveY(generator) - 2;
+						x = moveX(generator) - 2;
 					}
 					arr[i].mover(mapa->matriz, y, x);
 				}
