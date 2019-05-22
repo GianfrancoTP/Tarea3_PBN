@@ -10,7 +10,7 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-	if (argc == 4)
+	if ((argc == 4) & (atoi(argv[1]) >= 25) & (atoi(argv[2]) >= 25) & (atoi(argv[1]) <= 100) & (atoi(argv[2]) <= 100))
 	{
 		int filas, columnas, ataque, puntosDeVida, defensa, recuperacion;
 		filas = atoi(argv[1]);
@@ -146,6 +146,10 @@ int main(int argc, char const *argv[])
 			}
 		}
 		cout << "Juego terminado." << endl;
+	}
+	else
+	{
+		cout << "Argumentos invalidos, por favor intente nuevamente." << endl;
 	}
 	return 0;
 }
